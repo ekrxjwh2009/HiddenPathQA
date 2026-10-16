@@ -1,7 +1,7 @@
 """
 run_tier_holi.py
 ================
-Tier-HOIL: type-Hierarchy / Ontology-Informed reasoning with a per-depth
+Tier-HOLI: type-Hierarchy / Ontology-Informed reasoning with a per-depth
 (tiered) loop.  At each depth d, the model selects the most promising
 relation-path *prefixes* of length d (Step1), the corresponding raw
 paths are matched and depth-truncated (Step2), and Step3 either commits

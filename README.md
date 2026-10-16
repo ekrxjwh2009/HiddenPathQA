@@ -1,6 +1,14 @@
 
 
 # HiddenPathQA
+
+📄 **Paper:** [HiddenPathQA: A Benchmark for Knowledge Graph Question Answering](https://mp2893.com/docs/jo_2026.pdf)  
+🏆 *Accepted at NeurIPS 2026 (Datasets and Benchmarks Track)*
+
+
+
+
+# HiddenPathQA
 This repository is the official implementation of the two methods
 proposed in our paper:
 
@@ -12,9 +20,9 @@ released separately from this repository.
 What is in this repository
 Two methods are released as part of this codebase:
 
-- **Flat-HOIL** (`run_flat_holi.py`)  single-pass selection over the
+- **Flat-HOLI** (`run_flat_holi.py`)  single-pass selection over the
 full set of candidate relation chains (no depth loop).
-- **Tier-HOIL** (`run_tier_holi.py`)  depth-tiered selection that grows
+- **Tier-HOLI** (`run_tier_holi.py`)  depth-tiered selection that grows
 the search depth one hop at a time and only commits to an answer
 when the current depth's evidence is sufficient.
 
@@ -84,10 +92,10 @@ python run_all.py
 # Run both methods on a 5-question smoke test
 python run_all.py --limit 5
 
-# Run only Flat-HOIL on a specific question id list
+# Run only Flat-HOLI on a specific question id list
 python run_all.py --only FlatHOIL --qids 10 20 30
 
-# Tier-HOIL, full benchmark, depth budget 6
+# Tier-HOLI, full benchmark, depth budget 6
 python run_all.py --only TierHOIL --tier_max_depth_limit 6
 ```
 
@@ -129,8 +137,8 @@ python run_tier_holi.py --max_attempts 2 --max_depth_limit 6 \
 ├── common.py                # LLM client, JSONL loaders, batch runner, MCQ adapter
 ├── local_subgraph_client.py # Local per-question subgraph backend +
 │                            #   type-aware path-formatting helpers
-├── run_flat_holi.py         # Flat-HOIL implementation
-├── run_tier_holi.py         # Tier-HOIL implementation
+├── run_flat_holi.py         # Flat-HOLI implementation
+├── run_tier_holi.py         # Tier-HOLI implementation
 ├── run_all.py               # Convenience runner for both methods
 ├── env_example.sh           # Template environment file
 └── requirements.txt

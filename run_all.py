@@ -1,8 +1,8 @@
 """
 run_all.py
 ==========
-Convenience runner for the two proposed methods of HOIL: Flat-HOIL and
-Tier-HOIL.
+Convenience runner for the two proposed methods of HOLI: Flat-HOLI and
+Tier-HOLI.
 
 Examples:
     python run_all.py
@@ -88,7 +88,7 @@ def _make_fn(name: str,
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run HOIL methods (Flat-HOIL, Tier-HOIL) on the KGQA benchmark."
+        description="Run HOLI methods (Flat-HOLI, Tier-HOLI) on the KGQA benchmark."
     )
     parser.add_argument("--only", nargs="*", default=None,
                         help=f"Run only these methods. Choices: {ALL_METHODS} "
@@ -98,23 +98,23 @@ def main():
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--output_dir", default=OUTPUT_DIR)
 
-    # ── Flat-HOIL hyperparameters ──
+    # ── Flat-HOLI hyperparameters ──
     parser.add_argument("--flat_max_attempts", type=int, default=2)
     parser.add_argument("--flat_max_candidates_show", type=int, default=200,
-                        help="Flat-HOIL Step1 LLM batch size (relation chains "
+                        help="Flat-HOLI Step1 LLM batch size (relation chains "
                              "per LLM call).  Larger → fewer batches but a "
                              "longer prompt per call.")
     parser.add_argument("--flat_max_select", type=int, default=5)
     parser.add_argument("--flat_max_raw_paths_show", type=int, default=50,
                         help="Number of raw paths shown to the LLM at Step3.")
 
-    # ── Tier-HOIL hyperparameters ──
+    # ── Tier-HOLI hyperparameters ──
     parser.add_argument("--tier_max_attempts", type=int, default=2)
     parser.add_argument("--tier_max_depth_limit", type=int, default=6,
                         help="Maximum search depth.  Default matches the "
                              "longest gold path in the benchmark.")
     parser.add_argument("--tier_max_candidates_show", type=int, default=200,
-                        help="Tier-HOIL Step1 LLM batch size (path prefixes "
+                        help="Tier-HOLI Step1 LLM batch size (path prefixes "
                              "per LLM call).")
     parser.add_argument("--tier_max_select", type=int, default=5)
     parser.add_argument("--tier_max_raw_paths_show", type=int, default=150)

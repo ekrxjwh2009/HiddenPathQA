@@ -1,7 +1,7 @@
 """
 run_flat_holi.py
 ================
-Flat-HOIL: type-Hierarchy / Ontology-Informed reasoning over a flat set
+Flat-HOLI: type-Hierarchy / Ontology-Informed reasoning over a flat set
 of candidate relation chains (no depth loop).  All candidate paths are
 considered together in a single Step1 batch (with consolidation when the
 batch overflows), then matched raw paths are scored in Step3.
